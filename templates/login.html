@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+
+{% from "form-helper.html" import render_field %}
+
+<div class="sect3">
+  <div class="form-wrapper">
+    <h2 class="form-title">Welcome back</h2>
+   
+    <form action="/login" method="POST">
+      {{ form.csrf_token }}
+      <dl>
+        {{ render_field(form.username) }}
+        {{ render_field(form.password) }}
+      </dl>
+      <button type="submit" class="btn">Login</button>
+    </form>
+  </div>  
+</div>
+
+{% endblock %}

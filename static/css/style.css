@@ -1,0 +1,558 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Roboto+Mono&display=swap");
+
+:root {
+    --dark: #333;
+    --light: #fff; 
+    --off: rgb(233, 233, 233); 
+    --hover: rgb(171, 171, 171);
+    --off-green-light: rgb(181, 245, 190);
+    --off-green-dark: rgb(140, 218, 151);
+    --off-green-active: rgb(154, 241, 165);
+    --title: 24px;
+}
+
+* {
+    font-family: "Montserrat", sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    background-color: var(--light);
+}
+
+body {
+    margin: 0;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: repeat(auto, 5);
+    grid-template-areas:
+        'header'
+        'sect0'
+        'sect1'
+        'sect2'
+        'sect3'        
+        'footer';
+}
+
+.sect0 {
+    grid-area: sect0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.sect1 {
+    grid-area: sect1;
+}
+
+.sect2 {
+    grid-area: sect2;
+}
+
+.sect3 {
+    grid-area: sect3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.sect1,
+.sect2,
+.sect3 { 
+    margin-bottom: 40px;
+}
+
+li {
+    list-style: none;
+}
+
+/* ---------button------------- */
+.btn {
+    background:linear-gradient(to bottom, var(--off-green-dark) 5%, var(--off-green-light));
+	background-color:var(--off-green-dark);
+	border-radius:6px;
+	border:1px solid var(--off-green-light);
+	display:inline-block;
+    cursor:pointer;
+    color: var(--dark);
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:10px 24px;
+	text-decoration:none;
+}
+.btn:hover {
+    background:linear-gradient(to bottom, var(--off-green-light) 5%, var(--off-green-dark));
+	background-color:var(--off-green-light);
+}
+.btn:active {
+	position:relative;
+	top:1px;
+}
+
+/* ---------input------- */
+form {
+    display: flex;
+    flex-direction: column;
+}
+form input {
+    width: 100%;
+    background-color: white;
+    font-size: 22px;
+    padding: 10px;
+    margin: 15px 0 15px 0;
+    border-radius: 7px;
+    
+}
+form input:hover,
+form input:active {
+    border-style: inset;
+    border: 3px solid rgb(6, 184, 243);
+    padding-bottom: 8px;
+}
+form button {
+    width: 100%;
+    margin-top: 15px;
+}
+form label {
+    font-size: 28px;
+}
+
+/* ---------nav--------- */
+nav {
+    grid-area: header;    
+    width: 100%;
+}
+
+.nav1 {
+    grid-area: nav1;
+}
+
+.nav2 {
+    grid-area: nav2;
+}
+
+.nav3 {
+    grid-area: nav3;
+}
+
+.nav1,
+.nav2,
+.nav3 {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+nav * {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: var(--off-green-dark);
+    font-size: 18px;
+    color: aliceblue;     
+}
+
+.nav-links li a {
+    margin-bottom: 10px;
+    text-decoration: none;
+}
+
+.nav-links li a strong {
+    color: rgb(95, 179, 253);
+    font-size: 1.5rem;
+}
+
+.nav-links li a {
+    font-size: 18px;
+    margin-right: 10px;
+    text-decoration: none;
+}
+
+.nav-links li a strong {
+    color: rgb(95, 179, 253);
+    font-size: 1.5rem;
+}
+
+.nav1 h2 {
+    font-size: 22px;
+}
+
+/* -----------about---------------- */
+.about h1 {
+    margin: 25px;
+    text-align: center;
+}
+
+.sect3 .about {
+    width: 40%;
+    font-size: 1.3rem;
+}
+
+.about img {
+    display: none;
+}
+
+/* ----------main content-------- */
+
+#control-form .form-error {
+    color: red;
+    padding: 0;
+    margin: -10px;
+    padding-left: 10px;
+}
+
+#control-form,
+#control-form-save,
+.control-chart {
+    padding: 15px;
+    border: 1px solid var(--off);
+    border-collapse: collapse;
+}
+
+.control-chart,
+.control-display {
+    width: 100%;
+    display: table;
+}
+
+.control-chart tr {
+    padding: 3px;
+    border-top: 1px solid var(--dark);
+    border-bottom: 1px solid var(--dark);
+}
+
+.control-chart td,
+.control-date-title {
+    border-top: 1px solid var(--dark);
+    border-bottom: 1px solid var(--dark);
+}
+
+.control-date td,
+.control-date-li {
+    font-size: var(--title);
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.control-chart td {
+    font-size: 18px;
+}
+
+.control-chart td:hover {
+    background: var(--hover);
+}
+
+.table-data-grams {
+    text-align: right;
+}
+
+.control-li {
+    display: flex;
+    align-items: center;
+    border: 1px solid var(--dark);
+    margin: 5px 0 0 10px;
+    padding: 10px 3px 10px 15px;
+    border: 1px solid var(--off);
+    border-radius: 8px;
+    border-right-width: 3px;
+    border-bottom-width: 3px;
+}
+
+.control-item,
+.control-date {
+    display: inline-block;
+    width: 80%;
+    margin-bottom: 0;
+}
+
+.control-weight,
+.control-checkbox {
+    display: inline-block;
+    width: 15%;
+    margin-bottom: 0;
+}
+
+.control-weight {
+    font-family: 'Roboto Mono', monospace;
+}
+
+.control-del {
+    width: 5%;
+    min-width: 18px;
+    font-size: larger;
+    border: 1px solid rgba(247, 7, 7, 0.233);
+    margin: 15px;
+}
+.control-del:hover {
+    cursor: pointer;
+    border: 1px solid rgba(247, 7, 7, 1);
+}
+  
+.control-del .tooltiptext {
+    visibility: hidden;
+    display: flex;
+    background-color: var(--hover);
+    color: var(--light);
+    border-radius: 6px;
+    position: absolute;
+    z-index: 1;
+    bottom: 100%;
+}
+  
+.control-del:hover .tooltiptext {
+    visibility: visible;
+}
+
+/* ------------user page------------- */
+.control-checkbox {    
+    margin: 15px;
+    width: 28px;
+    height: 28px;
+}
+/* ------------------------ */
+.control-date {
+    font-size: 28px;
+}
+
+.control-date-li,
+.control-date-title {
+    width: 100%;
+    font-size: var(--title);
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+th {
+    font-size: var(--title);
+}
+
+.hidden {
+    display: none;
+}
+
+.alert-danger {
+    text-align: center;
+    background-color: rgb(240, 158, 158);
+    font-size: 24px;
+    width: 40%;
+    min-width: 400px;
+}
+.alert-info {
+    text-align: center;
+    background: var(--off-green-light);
+    font-size: 24px;
+    width: 40%;
+    min-width: 400px;
+}
+/* -----------signup login forms-------------- */
+.form-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 40%;
+    min-width: 400px;
+    border: 2px solid var(--off);
+    border-radius: 8px;
+    padding: 25px 10px 25px 25px;
+}
+
+.form-wrapper h2 {
+    font-size: 48px;
+}
+
+.form-wrapper dl {
+    font-size: 24px;
+    margin: 10px 0 10px 0;
+}
+
+/* -----------footer-------------- */
+footer {
+    grid-area: footer;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: var(--dark);
+    text-align: center;
+    background-color: var(--off-green-dark);
+}
+
+footer p {
+    background-color: var(--off-green-dark);
+    /* margin: 20px;
+    padding: 0; */
+}
+
+/*----------------Modal-----------------------*/
+/* The Modal (background) */
+.options-modal,
+.commit-modal {
+    position: fixed;
+    z-index: 1; 
+    padding-top: 100px; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4); 
+}
+/* Modal Content */
+.modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 80%;
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s    
+}
+
+.modal-anchor {
+    font-size: 24px;
+    padding: 5px;
+}
+
+.modal-anchor:nth-child(even) {
+    background: #e5e5e5;
+}
+
+.modal-anchor:hover {
+    cursor: pointer;
+    border: 1px solid #888;
+}
+
+.hidden {
+    color: #bababa;
+    display: none;
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0} 
+    to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+
+.modal-header h1 {
+    text-align: center;
+    padding: 2px 16px;
+    background-color: var(--off-green-dark);
+    color: white;
+}
+
+.modal-body {padding: 2px 16px;}
+
+.modal-footer h3 {
+    text-align: center;
+    padding: 2px 16px;
+    background-color: var(--off-green-dark);
+    color: white;
+}
+
+/* -------------resizing screens-------------- */
+@media only screen and (min-width: 1050px) {
+    .nav-links li a {
+        font-size: 22px;
+        margin-right: 18px;
+        text-decoration: none;
+    }
+    .nav-links li a strong {
+        color: rgb(95, 179, 253);
+        font-size: 1.5rem;
+    }
+    .nav1 h2 {
+        font-size: 28px;
+    }
+}
+  
+@media only screen and (min-width: 770px) {    
+    body {
+        margin: 0;
+        display: grid;
+        grid-template-columns: 40% 60%;
+        grid-template-rows: auto auto auto auto;
+        grid-template-areas:
+            'header header'
+            'sect0 sect0'
+            'sect1 sect2'
+            'sect3 sect3'
+            'footer footer';
+    }
+    nav {
+        display: grid;
+        grid-template-columns: 30% 40% 30%;
+        grid-template-rows: auto;
+        grid-template-areas:
+            'nav1 nav2 nav3';
+        width: 100%;
+        height: 80px;
+    }
+    .nav-links {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+    .sect1,
+    .sect2,
+    .sect3 {        
+        padding: 20px;
+        margin-bottom: 40px;
+    }
+    .sect3 h1 {
+        margin-top: 150px;
+        margin-bottom: 30px;
+        font-size: 64px;
+    }
+    
+    .sect3 .btn {
+        margin-top: 40px;
+        font-size: 18px;
+    }
+    .button-group {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        margin-top: 12px;
+    }
+    .button-group .btn {
+        width: 40%;
+        margin: 20px 0 20px 0;
+        font-size: 18px;
+    }
+    footer p {
+        margin: 20px;
+    }
+    footer {
+        margin-top: 40px;
+    }
+    .about img{
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        margin: 50px;
+    }
+    .about ol {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .about p {
+        margin-bottom: 30px;
+    }
+}

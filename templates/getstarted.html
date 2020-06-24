@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<!-- <section class="start-main"> -->
+  <div class="sect1">
+    <form id="control-form" class="control-form-input">
+      <label for="add-weight">Enter weight of ingredient in grams:</label>
+      <input type="text" name="add-weight" id="add-weight" placeholder="grams" required>        
+      <label for="add-product">Enter a recipe ingredient:</label>
+      <input type="text" name="add-product" id="add-product" required>
+      <p class="form-error hidden">Error: Recipe item already exists.</p>
+      <div class="button-group">
+        <button id="add-food-button" class="btn">Add Ingredient</button>
+        <button class="btn commit-food-button">Save Recipe</button>
+      </div>      
+    </form>
+    <form id="control-form-save" class="control-form-save hidden" >
+      <label for="add-menu-name">Name your menu:</label>
+      <input type="text" name="add-menu-name" id="add-menu-name" placeholder="menu name" required>
+      <div class="button-group">
+        <button class="btn commit-food-button">Save Recipe</button>
+      </div>      
+    </form>
+  <!-- </div>
+  <div class="sect2"> -->
+    <div class="control-right">
+      <ul class="control-display">
+        <li>
+          <span class="control-li">
+            <p class="control-item"><strong>Ingredient</strong></p>
+            <p class="control-weight"><strong>Grams</strong></p>
+            <!-- this section is create in javascript -->
+            <!-- <button class="control-del">X</buttonp> -->
+          </span>
+        </li> 
+      </ul>  
+    </div>
+  </div>
+  <div class="sect2">
+    <table class="control-chart">
+      <tr>
+        <th id="nutrient">Nutrient</th>
+        <th id="weight">Weight/Unit</th>
+      </tr>
+    </table>
+  </div>
+  
+<!-- </section> -->
+
+<!-- this section visibility is controlled in javascript -->
+<div id="options-modal" class="options-modal hidden">
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="modal-header">
+      <h1>Narrow down your search</h1>
+    </div>
+    <div class="modal-body">
+      <ul class="modal-ul">
+      </ul>
+    </div>
+    <div class="modal-footer">
+      <h3>Food Tracker</h3>
+    </div>
+  </div>  
+</div>
+
+
+{% endblock %}

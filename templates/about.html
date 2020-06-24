@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="sect3">
+  
+  <div class="about">
+    <h1>About Food Tracker</h1>
+    <p>
+      <strong>Food Tracker</strong> is one of my school projects for the  <a href="https://www.springboard.com">Springboard Software Engineering Career Track</a>. 
+      <br><br>
+      What this app does is allows a user to track their diet intake of nutrients. All the data was obtained exclusively from the USDA FoodData Central API. 
+      <br><br>
+      Users can create an account and save their menu to use in the future for comparison. Creating an account is not neccessary and a Guest account is set up for anyone to use without signing in.
+      
+    </p>
+    <hr>
+    <h1>Getting Started</h1>
+    <ol type="A">
+      <li>Enter menu item in grams.</li>
+      <li>Click <b>Add Ingredient</b> button.</li>
+      <li>Each menu item can be deleted if needed.</li>
+    </ol>
+    <img src="/static/image/getstarted.gif" alt="Get started info">
+    <h1>Saving A Menu</h1>
+    <ol type="A">
+      <li>Click <b>Save Recipe</b> button.</li>
+      <li>Add a menu title.</li>
+      <li>Click <b>Save Recipe</b> button.</li>
+      <li>Each saved menu can be deleted if needed.</li>
+    </ol>
+    <img src="/static/image/saveMenu.gif" alt="Save a menu info">
+  </div>
+  
+</div>
+{% endblock %}

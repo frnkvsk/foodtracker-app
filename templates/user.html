@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="sect1">
+    <div class="control-left">
+        <ul class="control-display saved-menus">
+            <li>
+                <p class="control-date-title"><strong>Saved Menus</strong></p>
+            </li>
+            {% for key, value in timestamps.items() %}
+            <li>
+                <!-- this section is create in javascript -->
+                <span class="control-li"> 
+                    <input type="checkbox" name="control-checkbox" class="control-checkbox" id="{{key}}"> 
+                    <p class="control-date-li"><strong>{{value}}</strong></p> 
+                    <button class="control-del del-date" id="{{key}}">X</buttonp> 
+                </span>
+            </li>                
+            {% endfor %}             
+        </ul>  
+    </div>
+</div>
+<div class="sect2">
+    <div class="control-right">
+        <table class="control-chart">
+            <tr>
+            <th id="nutrient">Nutrient</th>
+            <th id="weight">Weight/Unit</th>
+            </tr>
+        </table>
+    </div>
+</div>
+
+{% endblock %}

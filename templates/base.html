@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" 
+      type="image/png" 
+      href="/static/image/icon.png">
+    <title>Food Tracker</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <nav>
+        <div class="nav1">
+            <img src="/static/image/logo.png" alt="foodtracker logo">
+            <!-- <h2>Food Tracker</h2> -->
+        </div>
+        <div class="nav2">
+            <ul class="nav-links">
+                <li><a class="active" href="/">Home</a></li>  
+                <li><a href="/get_started">Get Started</a></li>  
+                <li><a href="/about">About</a></li>
+            </ul>
+        </div>
+        <div class="nav3">
+            <ul class="nav-links">
+                {% if not g.user %}
+                <li><a href="/user"><strong>Guest</strong></a></li>  
+                <li><a href="/signup">Sign Up</a></li>
+                <li><a href="/login">Login</a></li>
+                {% else %}        
+                <li><a href="/user"><strong>{{g.user.username}}</strong></a></li>      
+                <li><a href="/logout">Logout</a></li>              
+                {% endif %}
+            </ul>            
+        </div>        
+    </nav>
+
+    <!-- <div class="main">         -->
+        <div class="sect0">
+            {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+            {% for category, message in messages %}
+            <p class="alert alert-{{category}}" role="alert">{{message}}</p>
+            {% endfor %}
+            {% endif %}
+        {% endwith %} 
+        </div>
+        
+        {% block content %}
+        <h1>This is the base html page</h1>    
+        {% endblock %}
+    <!-- </div> -->
+
+    <footer>
+        <p>Food Tracker &copy; 2020</p>
+    </footer>
+ 
+    <script src="/static/js/providers/standardizeUnits.js"></script>
+    <!-- axios -->
+    <script src="https://unpkg.com/axios/dist/axios.js"></script>
+    <!-- providers javascript files -->
+    <script src="/static/js/providers/food-server-pro.js"></script>
+    <script src="/static/js/providers/food-cache-pro.js"></script>
+    <!-- views javascript files -->
+    <script src="/static/js/views/modal-comp.js"></script>
+    <!-- <script src="/static/js/views/chart-comp.js"></script>  -->
+    
+    <script src="/static/js/views/list-comp.js"></script> 
+
+    <!-- main javascript file -->
+    <script src="/static/js/app.js"></script>
+
+    
+</body>
+</html>
