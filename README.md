@@ -16,3 +16,5 @@ PostgreSQL database. If a user chooses not to create an account, they can use th
 
 ![image](Database_schema.svg)
 
+Technology stack used: Python, Javascript, HTML, CSS, Flask, Flask-Bcrypt, Flask-SQLAlchemy, Jinja2, WTForms.
+
