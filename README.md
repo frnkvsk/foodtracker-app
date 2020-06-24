@@ -14,7 +14,7 @@ developers to inform them on how the data is used.
 The app will allow a user to create an account and keep track of their diet over a period of time. User data will be saved in a 
 PostgreSQL database. If a user chooses not to create an account, they can use the app but just won’t have the ability to save their data.
 
-![image](Database_schema.svg)
+![image](diet_planner.svg)
 
 Technology stack used: Python, Javascript, HTML, CSS, Flask, Flask-Bcrypt, Flask-SQLAlchemy, Jinja2, WTForms.
 
