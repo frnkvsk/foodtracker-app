@@ -1,5 +1,6 @@
 # foodtracker-app
-School project that gets data from an API and allows people to work with this data.
+School project that gets data from an API and allows people to work with this data.  
+
 https://foodtracker-app.herokuapp.com/
 
 Plan a menu down to each calorie and nutrient. This app will let the user input menu ingredients with weight or measurement. 
